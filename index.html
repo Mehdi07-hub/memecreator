@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MemeCreator Pro</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Added Font Awesome for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>MemeCreator Pro</h1>
+            <p class="tagline">Créez des mèmes personnalisés en quelques clics</p>
+        </header>
+
+        <div class="container">
+            <!-- Upload Section -->
+            <div class="card" id="uploadContainer">
+                <div class="upload-area">
+                    <span class="material-icons upload-icon">file_upload</span>
+                    <p class="upload-text">Cliquez ou déposez une image ici</p>
+                    <small id="uploadHelp">Formats acceptés: JPG, PNG, GIF (max 5MB)</small>
+                    <input type="file" id="imageUpload" accept="image/*" class="hidden" />
+                </div>
+            </div>
+
+            <!-- Editor Section -->
+            <div class="card hidden" id="editorContainer">
+                <div class="editor-layout">
+                    <!-- Sidebar Controls -->
+                    <div class="controls">
+                        <!-- Text Control -->
+                        <div class="control-group">
+                            <h3>Texte</h3>
+                            <div class="form-group">
+                                <label for="topText">Texte du haut</label>
+                                <input type="text" id="topText" placeholder="Entrez votre texte ici..." />
+                            </div>
+                            <div class="form-group">
+                                <label for="bottomText">Texte du bas</label>
+                                <input type="text" id="bottomText" placeholder="Entrez votre texte ici..." />
+                            </div>
+                        </div>
+
+                        <!-- Style Control -->
+                        <div class="control-group">
+                            <h3>Style de texte</h3>
+                            <div class="form-group">
+                                <label for="fontFamily">Police</label>
+                                <select id="fontFamily">
+                                    <option value="Impact">Impact</option>
+                                    <option value="Anton">Anton</option>
+                                    <option value="Bebas Neue">Bebas Neue</option>
+                                    <option value="Oswald">Oswald</option>
+                                    <option value="Arial">Arial</option>
+                                    <option value="Comic Sans MS">Comic Sans MS</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="fontSize">Taille du texte</label>
+                                <div class="range-slider">
+                                    <input type="range" id="fontSize" min="20" max="100" value="48" />
+                                    <span class="range-value" id="fontSizeValue">48px</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Color Control -->
+                        <div class="control-group">
+                            <h3>Couleurs</h3>
+                            <div class="form-group">
+                                <label for="textColor">Couleur du texte</label>
+                                <div class="color-picker-group">
+                                    <input type="color" id="textColor" value="#ffffff" />
+                                    <div id="colorPreview" class="color-preview" style="background-color: #ffffff;"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="strokeColor">Couleur du contour</label>
+                                <div class="color-picker-group">
+                                    <input type="color" id="strokeColor" value="#000000" />
+                                    <div id="strokePreview" class="color-preview" style="background-color: #000000;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Canvas Preview -->
+                    <div class="preview-section">
+                        <div class="canvas-container">
+                            <canvas id="memeCanvas"></canvas>
+                        </div>
+                        <div class="buttons">
+                            <button id="resetBtn">
+                                <span class="material-icons btn-icon">refresh</span>
+                                Réinitialiser
+                            </button>
+                            <button id="downloadBtn">
+                                <span class="material-icons btn-icon">download</span>
+                                Télécharger
+                            </button>
+                            <button id="gallery-btn" class="btn btn-gallery">
+                                <span class="material-icons btn-icon">photo_library</span>
+                                Galerie
+                            </button>
+                            <button id="share-btn" class="btn btn-share" disabled>
+                                <span class="material-icons btn-icon">share</span>
+                                Partager
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Share Buttons -->
+            <div class="share-buttons hidden">
+                <button class="share-button facebook" id="share-facebook"><i class="fab fa-facebook-f"></i> Facebook</button>
+                <button class="share-button twitter" id="share-twitter"><i class="fab fa-twitter"></i> Twitter</button>
+                <button class="share-button instagram" id="share-instagram"><i class="fab fa-instagram"></i> Instagram</button>
+            </div>
+
+            <!-- Gallery Container -->
+            <div class="gallery-container hidden" id="gallery-container">
+                <h2>Galerie de mèmes</h2>
+                <div class="gallery" id="meme-gallery">
+                    <!-- Les éléments de la galerie seront ajoutés dynamiquement ici -->
+                </div>
+            </div>
+
+            <!-- Social Share Panel -->
+            <div class="social-share-panel hidden" id="social-share-panel">
+                <button class="close-share" id="close-share">✖</button>
+                <div class="social-btn facebook" title="Partager sur Facebook"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-btn twitter" title="Partager sur Twitter"><i class="fab fa-twitter"></i></div>
+                <div class="social-btn pinterest" title="Partager sur Pinterest"><i class="fab fa-pinterest"></i></div>
+                <div class="social-btn whatsapp" title="Partager sur WhatsApp"><i class="fab fa-whatsapp"></i></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>MemeCreator Pro © 2025 - Créez et partagez vos mèmes facilement</p>
+        </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

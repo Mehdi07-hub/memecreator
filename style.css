@@ -1,0 +1,593 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+    line-height: 1.6;
+  }
+  
+  /* App container */
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #343a40;
+    color: #fff;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+  
+  header .tagline {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+  
+  /* Main container */
+  .container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+  }
+  
+  /* Card layout */
+  .card {
+    background-color: #fff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 960px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Upload area */
+  .upload-area {
+    border: 2px dashed #ced4da;
+    border-radius: 1rem;
+    padding: 3rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .upload-area:hover {
+    background-color: #f1f3f5;
+  }
+  
+  .upload-icon {
+    font-size: 3rem;
+    color: #6c757d;
+  }
+  
+  .upload-text {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  
+  #uploadHelp {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  
+  .hidden {
+    display: none !important;
+  }
+  
+  /* Editor layout */
+  .editor-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  
+  /* Sidebar controls */
+  .controls {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .control-group h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #495057;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+  
+  input[type="text"],
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  /* Range slider */
+  .range-slider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  input[type="range"] {
+    flex: 1;
+  }
+  
+  .range-value {
+    font-size: 0.9rem;
+    color: #495057;
+  }
+  
+  /* Color picker group */
+  .color-picker-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .color-preview {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+  }
+  
+  /* Preview section */
+  .preview-section {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .canvas-container {
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    width: 100%;
+    max-width: 600px;
+    overflow: auto;
+  }
+  
+  canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Buttons */
+  .buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+  button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0b5ed7;
+  }
+  
+  .btn-icon {
+    font-size: 1.2rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #343a40;
+    color: #adb5bd;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+ /* CSS pour les boutons de partage sur les réseaux sociaux */
+.social-share {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.share-btn {
+  background-color: #333;
+  color: white;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.share-facebook {
+  background-color: #4267B2;
+}
+
+.share-twitter {
+  background-color: #1DA1F2;
+}
+
+.share-whatsapp {
+  background-color: #25D366;
+}
+
+.share-btn:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+} 
+// CSS pour les boutons de partage et la galerie (à ajouter dans votre CSS)
+`.share-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+.share-button {
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+.share-button i {
+    margin-right: 5px;
+}
+.facebook { background-color: #4267B2; }
+.twitter { background-color: #1DA1F2; }
+.instagram { background-color: #C13584; }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 30px;
+}
+.gallery-item {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+.gallery-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background-color: #f5f5f5;
+}
+.gallery-actions button {
+    padding: 5px 8px;
+    font-size: 12px;
+    margin: 0;
+}`
+/* Styles pour les boutons de partage et galerie */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.btn-share {
+  background-color: #4267B2;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-share:hover {
+  background-color: #365899;
+}
+
+.btn-gallery {
+  background-color: #6C757D;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-gallery:hover {
+  background-color: #5a6268;
+}
+
+/* Styles pour la galerie */
+.gallery-container {
+  width: 100%;
+  margin-top: 30px;
+  display: none;
+}
+
+.gallery-container.active {
+  display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.gallery-btn {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Styles pour le panel de partage */
+.social-share-panel {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.social-share-panel.active {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.facebook {
+  background-color: #4267B2;
+}
+
+.twitter {
+  background-color: #1DA1F2;
+}
+
+.pinterest {
+  background-color: #E60023;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.close-share {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
+/* Styles pour les boutons de partage et galerie */
+.btn {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin: 5px;
+}
+
+.btn-share {
+  background-color: #4267B2;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-share:hover {
+  background-color: #365899;
+}
+
+.btn-gallery {
+  background-color: #6C757D;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-gallery:hover {
+  background-color: #5a6268;
+}
+
+/* Styles pour la galerie */
+.gallery-container {
+  width: 100%;
+  margin-top: 30px;
+  display: none;
+}
+
+.gallery-container.active {
+  display: block;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-buttons {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: space-around;
+  padding: 5px;
+}
+
+.gallery-btn {
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Styles pour le panel de partage */
+.social-share-panel {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.social-share-panel.active {
+  display: flex;
+  gap: 10px;
+}
+
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.facebook {
+  background-color: #4267B2;
+}
+
+.twitter {
+  background-color: #1DA1F2;
+}
+
+.pinterest {
+  background-color: #E60023;
+}
+
+.whatsapp {
+  background-color: #25D366;
+}
+
+.close-share {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+}
